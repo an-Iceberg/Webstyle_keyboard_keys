@@ -1,0 +1,69 @@
+*, *:is(::after, ::before) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 1rem "Helvetica", sans-serif;
+}
+
+body {
+  background-color: rgb(14%,14%,14%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+kbd {
+  position: relative;
+  padding: 8px 15px;
+  margin: 8px 4px;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  color: rgb(100%, 100%, 100%);
+  background-image: linear-gradient(to bottom, rgb(16%,16%,16%), rgb(13%,13%,13%));
+  box-shadow:
+    inset -8px 0 8px rgb(0%, 0%, 0%, 15%),
+    inset 0 -8px 8px rgb(0%, 0%, 0%, 25%),
+    0 0 0 2px rgb(0%, 0%, 0%, 75%),
+    10px 20px 25px rgb(0%, 0%, 0%, 40%);
+  overflow: hidden;
+  isolation: isolate;
+
+  &.shift {
+    width: 110px;
+  }
+
+  &.alt {
+    width: 90px;
+  }
+
+  &.spacebar {
+    width: 450px;
+
+    &::before {
+      background-image: linear-gradient(to top, rgb(14%,14%,14%), rgb(29%, 29%, 29%));
+      border-bottom: 1px solid #0009;
+      border-top: 1px solid #0004;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 3px 12px 14px 4px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(14%,14%,14%), rgb(29%, 29%, 29%));
+    box-shadow:
+      -10px -10px 10px rgb(100%, 100%, 100%, 25%),
+      10px 5px 10px rgb(0%, 0%, 0%, 15%);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+    z-index: -1;
+  }
+}
